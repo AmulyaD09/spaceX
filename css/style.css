@@ -9,7 +9,7 @@
 }
 
 body {
-  font-family: 'Familjen Grotesk', sans-serif;
+  font-family: 'Tahoma', sans-serif;
   background: #000;
   color: #fff;
 }
@@ -31,22 +31,22 @@ ul {
   width: 100%;
   z-index: 3;
   display: flex;
-  justify-content: center;
+  justify-content: space-between;
   align-items: center;
   text-transform: uppercase;
-  height: 100px;
-  padding: 50px;
-  padding-top:45px;
- 
+  height: 200px;
+  padding: 50px 190px;
+  margin-right: 15px;
   font-weight: bold;
   font-family:Arial, Helvetica, sans-serif;
   font-size: 12px;
+  
   
 }
 
 /* Logo */
 .logo {
-  width: 300px;
+  width: 250px;
   height: auto;
 }
 
@@ -54,22 +54,23 @@ ul {
   display: block;
   width: 100%;
   height: auto;
-  padding-right: 90px;
+
   
 }
 
-   #navbar {
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    background-color: black;
-    color: #fff;
-    height: 50px;
-    opacity: 1;
-    transition: opacity 0.3s;
-    z-index: 1;
+#navbar{
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  color: #fff;
+  height: 100px;
+  opacity: 1;
+  transition: opacity 0.3s;
+  z-index: 1;
   }
+
+
   
   .hide {
     opacity: 0.3;
@@ -79,7 +80,7 @@ ul {
 
 /* Desktop Menu */
 .desktop-main-menu {
-  margin-right: 50px;
+  margin-right: 60px;
 }
 
 .desktop-main-menu ul {
@@ -151,9 +152,34 @@ section {
   /* // Stop from showing at start */
 }
 
+@keyframes moveIn {
+  from {
+      transform: translateX(-100px);
+  }
+  to {
+      transform: translateX(0px);
+      opacity: 1;
+  }
+}
+
+
+@keyframes moveInSpace {
+  50% {
+     transform: translateY(100px) rotate(-20deg) scale(0.8); 
+  }
+}
+
+.right-section img {
+  height: 70vh;
+  margin-left: 800px;
+  margin-top: 150px;
+  transform: rotate(20deg);
+  animation: moveInSpace 12s ease-in-out infinite alternate;
+}
+
 /* Background images */
 .section-a {
-  background-image: url('https://sxcontent9668.azureedge.us/cms-assets/assets/Launch_Page_Starlink1_vertical_18_DESKTOP_55f4b0f534.jpg');
+  background-image: url('https://images.pexels.com/photos/23764/pexels-photo.jpg');
 }
 .section-b {
   background-image: url('https://sxcontent9668.azureedge.us/cms-assets/assets/Star5_9_Star5_9_DSC_2829_desktop_1e6d60597e.jpg');
@@ -242,11 +268,11 @@ footer ul li a:hover {
 /* Hamburger Menu */
 .hamburger {
   position: fixed;
-  top: 35px;
-  right: 20px;
+  top: 43px;
+  right: 45px;
   z-index: 10;
   cursor: pointer;
-  width: 20px;
+  width: 15px;
   height: 20px;
   background: none;
   border: none;
@@ -390,6 +416,7 @@ footer ul li a:hover {
   animation-fill-mode: both;
 }
 
+
 /* Stats */
 .stats {
   max-width: 960px;
@@ -399,6 +426,7 @@ footer ul li a:hover {
   justify-content: space-between;
   text-align: center;
   text-transform: uppercase;
+  margin-top:150px;
 }
 
 .stats div span {
@@ -479,7 +507,7 @@ footer ul li a:hover {
   }
 
   footer ul li:first-child {
-    position: absolute;
+    /* position: absolute; */
     top: 30px;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -507,3 +535,102 @@ footer ul li a:hover {
     margin-bottom: 20px;
   }
 }
+
+
+section.rocket {
+  display: grid;
+  grid-template-columns: 1fr 40px 1fr;
+  grid-gap: 50px;
+  padding: 60px 0;
+  margin-left:250px;
+  margin-top: 150px;
+  word-spacing: 1.5px;
+  letter-spacing: 1px;
+  line-height: 1.9;
+}
+
+section.rocket .rocket-body {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+
+}
+
+section.rocket-body {
+  margin-left: 130px;
+}
+
+
+
+section.rocket .rocket-body span img {
+  width: 100%;
+}
+
+
+
+section.rocket p {
+  margin-top: 30px;
+  padding: 80px;
+}
+
+
+section.rocket .rocket-body span:nth-child(1):after {
+  bottom: 16px;
+  left: 96%;
+}
+
+section.rocket .rocket-body span:nth-child(2):after {
+  bottom: 62%;
+  right: 100%;
+}
+
+section.rocket .rocket-body span:nth-child(3):after {
+  bottom: 64%;
+  right: 90%;
+}
+
+section.rocket .rocket-body span:nth-child(3):before {
+  bottom: 36%;
+  left: 90%;
+}
+
+section.rocket .rocket-body span.active:nth-child(1):after {
+  width: 120px;
+}
+
+section.rocket .rocket-body span.active:nth-child(2):after {
+  width: 180px;
+}
+
+section.rocket .rocket-body span.active:nth-child(3):after {
+  width: 200px;
+}
+
+section.rocket .rocket-body span.active:nth-child(3):before {
+  width: 160px;
+}
+
+@keyframes jump {
+  50% {
+      transform: translateY(-50px);
+  }
+}
+
+section.rocket .rocket-body span.active:nth-child(1){
+  animation: jump 1s ease-in-out forwards;
+}
+
+.container {
+  width: 1360px;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+:root {
+  --primary: #1E1E1E;
+  --dark: #121212;
+  --pure: #ffffff;
+  --gray: #1d1d1d;
+  --mild: #b9b8b8;
+}
+
